@@ -1,0 +1,27 @@
+type ItemCollection implements Collection {
+    id: String
+    name: String!
+    price: Float
+}
+
+input ItemInput {
+    name: String!
+    price: Float
+}
+
+type ItemPagination implements PageResponse {
+    items: [ItemCollection]
+    total: Long!
+}
+
+extend type Query {
+    itemsGet(page: PageInput): ItemPagination
+}
+
+extend type Mutation {
+    itemCreate(item: ItemInput): ItemCollection
+}
+
+extend type Subscription {
+    itemsSubscribe: ItemCollection
+}

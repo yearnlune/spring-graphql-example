@@ -1,0 +1,15 @@
+server:
+  port: 9000
+spring:
+  graphql:
+    websocket:
+      path: /example/graphql
+    path: /example/graphql
+    schema:
+      locations: classpath:graphql/**/
+  data:
+    mongodb:
+      field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
+  mongodb:
+    embedded:
+      version: 5.0.6

@@ -1,0 +1,80 @@
+[
+    {
+        "id": "62946b347bfac12ff5f2ea56",
+        "name": "item#1",
+        "price": 2.05,
+        "_class": "io.github.yearnlune.graphql.example.domain.entity.Item"
+    },
+    {
+        "id": "62946b347bfac12ff5f2ea57",
+        "name": "item#2",
+        "price": 12.30,
+        "_class": "io.github.yearnlune.graphql.example.domain.entity.Item"
+    },
+    {
+        "id": "62946b347bfac12ff5f2ea58",
+        "items": [
+            {
+                "item": {
+                    "id": "62946b347bfac12ff5f2ea56",
+                    "name": "item#1",
+                    "price": 2.05
+                },
+                "quantity": 2
+            },
+            {
+                "item": {
+                    "id": "62946b347bfac12ff5f2ea57",
+                    "name": "item#2",
+                    "price": 12.30
+                },
+                "quantity": 5
+            }
+        ],
+        "_class": "io.github.yearnlune.graphql.example.domain.entity.Order"
+    },
+    {
+        "id": "62946b347bfac12ff5f2ea59",
+        "items": [
+            {
+                "item": {
+                    "id": "62946b347bfac12ff5f2ea56",
+                    "name": "item#1",
+                    "price": 2.05
+                },
+                "quantity": 2
+            },
+            {
+                "item": {
+                    "id": "62946b347bfac12ff5f2ea57",
+                    "name": "item#2",
+                    "price": 12.30
+                },
+                "quantity": 2
+            }
+        ],
+        "_class": "io.github.yearnlune.graphql.example.domain.entity.Order"
+    },
+    {
+        "id": "62946b347bfac12ff5f2ea60",
+        "items": [
+            {
+                "item": {
+                    "id": "62946b347bfac12ff5f2ea56",
+                    "name": "item#1",
+                    "price": 2.05
+                },
+                "quantity": 1
+            },
+            {
+                "item": {
+                    "id": "62946b347bfac12ff5f2ea57",
+                    "name": "item#2",
+                    "price": 12.30
+                },
+                "quantity": 1
+            }
+        ],
+        "_class": "io.github.yearnlune.graphql.example.domain.entity.Order"
+    }
+]

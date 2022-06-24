@@ -1,0 +1,32 @@
+
+type OrderCollection implements Collection {
+    id: String
+    items: [OrderItemCollection]
+}
+
+type OrderItemCollection {
+    item: ItemCollection
+    quantity: Long
+}
+
+input OrderItemInput {
+    itemId: String
+    quantity: Long
+}
+
+input OrderInput {
+    items: [OrderItemInput]
+}
+
+type OrderPagination implements PageResponse {
+    orders: [OrderCollection]
+    total: Long!
+}
+
+extend type Query {
+    ordersGet(page: PageInput): OrderPagination
+}
+
+extend type Mutation {
+    orderCreate(order: OrderInput): OrderCollection
+}

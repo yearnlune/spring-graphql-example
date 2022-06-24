@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>GraphQL over WebSocket</title>
+    <script type="text/javascript" src="https://unpkg.com/graphql-ws/umd/graphql-ws.js"></script>
+</head>
+<body>
+<p>Check the console for subscription messages.</p>
+<script type="text/javascript">
+    const client = graphqlWs.createClient({
+        url: 'ws://localhost:9000/example/graphql',
+    });
+
+    (async () => {
+        const onNext = (data) => {
+            console.log("Subscription data:", data);
+        };
+
+        await new Promise((resolve, reject) => {
+            client.subscribe(
+                    {
+                        query: 'subscription {\n' +
+                                '    itemsSubscribe {' +
+                                '        id\n' +
+                                '        name\n' +
+                                '        price\n' +
+                                '    }\n' +
+                                '}',
+                    },
+                    {
+                        next: onNext,
+                        error: reject,
+                        complete: resolve,
+                    },
+            );
+        });
+    })();
+
+</script>
+</body>
+</html>
